@@ -46,13 +46,11 @@ For more information on how to proceed with developing your first Lisk based dap
 
 ## Sandboxing
 
-Lisk Dapps execute within an sandboxed NodeJS environment. Where 90% of all system calls are handled by [Seccomp](https://en.wikipedia.org/wiki/Seccomp). An application sandboxing mechanism located in the Linux kernel.
+Lisk Dapps are executed using Lisk Node, a specialized version of NodeJS that provides a sandboxed runtime environment in which to run individual dapps. Inter-process communication is achieved using Named Pipes, with no imposed limit on message size.
 
-As a result of this, you can only run master nodes in production on Linux machines. Mac OS X and Windows machines are restricted to the development of dapps only.
+Upon launching a new Dapp, the Lisk client starts a new instance of Lisk Node as a child process. If a Dapp encounters a fatal error, then the child process is killed gracefully, leaving the parent Lisk client unaffected.
 
-When Lisk launches a new Dapp, it launches a NodeJS sandboxed process which communicates with Lisk via a [Named Pipe](https://en.wikipedia.org/wiki/Named_pipe). Which consequently, provides a safe execution environment for dapps to operate within.
-
-**NOTE:** Taking into consideration how named pipes have their known limitations. We have made signifcant efforts to ensure no limit is imposed on the message size.
+**Please note, currently there is no protection against unauthorized system calls made from the running dapp. Therefore, running untrusted code is not yet advisable, and could potentially lead to loss of funds. Work is underway to provide a fully sandboxed environment in which to run untrusted code.**
 
 ## Determinism
 
