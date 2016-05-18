@@ -1,16 +1,16 @@
-# Creating a Messaging Dapp
+# Creating a Messaging App
 
-In this tutorial we show how easy it is to create a Lisk based Messaging dapp.
+In this tutorial we show how easy it is to create a Lisk based Messaging app.
 
-We've already created a basic dapp. So let's develop it further into something a little more useful, while at the same time explaining step by step how exactly it is done.
+We've already created a basic app. So let's develop it further into something a little more useful, while at the same time explaining step by step how exactly it is done.
 
 First open a command prompt and change directory to our previously generated **dapps** folder:
 
 ```text
-cd dapps/[dappid]/
+cd dapps/[appid]/
 ```
 
-Replace **[dappid]** with your dapp's own unique identifier. Then issue the following command to create new contract using **Lisk CLI**:
+Replace **[appid]** with your app's own unique identifier. Then issue the following command to create new contract using **Lisk CLI**:
 
 ```text
 lisk-cli contract -a
@@ -100,9 +100,9 @@ If you look closely, you will see our contract inherits from `modules.logic.tran
 
 Taking a second look at our **Message.js** contract, you will also see that we calculate the transaction fee, add new types of data, verify that data is correct and then verify that our data is ready to be applied to the blockchain.
 
-This obviously gives us a lot of power and flexibility when it comes to creating our Messaging dapp.
+This obviously gives us a lot of power and flexibility when it comes to creating our Messaging app.
 
-Since we are developing a Messaging dapp, the primary purpose of our dapp will be to send messages from one user to another. We will need to:
+Since we are developing a Messaging app, the primary purpose of our app will be to send messages from one user to another. We will need to:
 
   * Create new fields to store message data.
   * Create an API to send and receive messages.
@@ -175,7 +175,7 @@ Message.prototype.normalize = function (asset, cb) {
 
 Right now, we are still missing a few steps. These are: reading/saving to a database and the application of transaction fees.
 
-First of all, let's create our database tables. All databases tables are defined within the file: **blockchain.json**, again located within the root folder of our dapp.
+First of all, let's create our database tables. All databases tables are defined within the file: **blockchain.json**, again located within the root folder of our app.
 
 Below is an example of the SQL based schema used to define a database:
 
@@ -201,7 +201,7 @@ Let's quickly describe each property:
   * **type** - The object type. Can be "table" or "index". In our case "table".
   * **tableFields** - An array of table fields.
 
-Below is the schema we will use to define the database for our Messaging dapp:
+Below is the schema we will use to define the database for our Messaging app:
 
 ```json
 {
@@ -228,7 +228,7 @@ As you can see, we've now created a table named **asset_messages**, set a **tm**
   * **message** - Message field to store messages data as a hexadecimal encoded string.
   * **transactionId** - Required for all table fields. A unique identifier linking to each transaction.
 
-Now we need to define a table join between **asset_messages** and **transactions** on our dapp's sidechain. In order to do this, find the **join** array within our **blockchain.json** file and add the following:
+Now we need to define a table join between **asset_messages** and **transactions** on our app's sidechain. In order to do this, find the **join** array within our **blockchain.json** file and add the following:
 
 ```json
 {
@@ -341,7 +341,7 @@ The same applies to the `undo` functions, but we use the `modules.blockchain.acc
 
 Congratulations! This completes our first step.
 
-Now we need to add an **API** to drive our dapp, which will allow us to interact with it.
+Now we need to add an **API** to drive our app, which will allow us to interact with it.
 
 ## API
 
@@ -366,7 +366,7 @@ Calling the `cb` function within an API call like so: `cb(error, result)` signif
 
 Now let's add these new functions to our API routes.
 
-Open the **routes.json** file located within the root folder of our dapp. Then add these lines to the start of the file.
+Open the **routes.json** file located within the root folder of our app. Then add these lines to the start of the file.
 
 ```json
 {
@@ -381,7 +381,7 @@ Open the **routes.json** file located within the root folder of our dapp. Then a
 },
 ```
 
-Open the **modules.full.json** file located within the root folder of our dapp. Then register your `Message` contract at the end of the file.
+Open the **modules.full.json** file located within the root folder of our app. Then register your `Message` contract at the end of the file.
 
 ```json
 "contracts/Message": "./modules/contracts/Message.js"
@@ -473,14 +473,14 @@ Great, now we need to fund our account using **Lisk CLI** and then we can send a
 lisk-cli dapps --deposit
 ```
 
-It will ask for your dapps' secret, amount and unique identifier. Then just send the following API request to your dapp:
+It will ask for your apps' secret, amount and unique identifier. Then just send the following API request to your app:
 
 ```text
 curl -XPUT -H "Content-type: application/json" -d '{
 "recipientId": "58191895912485L",
 "message": "Hello, world!",
 "secret": "mysecret"
-}' 'http://localhost:7000/api/dapps/[dappid]/api/messages/add'
+}' 'http://localhost:7000/api/dapps/[appid]/api/messages/add'
 ```
 
 Great, it's done! To list messages for a given recipient, let's make another API call using the `list` function:
@@ -542,14 +542,14 @@ Message.prototype.list = function (cb, query) {
 
 Here we run a SQL query to get a list of messages from the blockchain, using the recipient's publicKey and transaction type as conditions.
 
-To get a list of messages, send the following API request to your dapp:
+To get a list of messages, send the following API request to your app:
 
 ```text
-curl -XGET 'http://localhost:7000/api/dapps/[dappid]/api/messages/list?recipientId=[recipientId]'
+curl -XGET 'http://localhost:7000/api/dapps/[appid]/api/messages/list?recipientId=[recipientId]'
 ```
 
-Replacing **[dappid]** with your dapp's own unique identifier and **[recipientId]** with the recipient's address.
+Replacing **[appid]** with your app's own unique identifier and **[recipientId]** with the recipient's address.
 
-This completes the backend of our Messaging dapp. The source code for this tutorial is available [here](https://github.com/LiskHQ/lisk-messaging-dapp).
+This completes the backend of our Messaging app. The source code for this tutorial is available [here](https://github.com/LiskHQ/lisk-messaging-app).
 
-In the [next tutorial](/documentation?i=lisk-dapps-docs/UserInterface), we describe how to create a frontend user interface for our Messaging dapp.
+In the [next tutorial](/documentation?i=lisk-apps-docs/UserInterface), we describe how to create a frontend user interface for our Messaging app.
