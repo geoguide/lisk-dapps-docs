@@ -129,7 +129,7 @@ This file contains important details about your app's genesis block. This file i
 
 This file contains your app's SQL database schema definition.
 
-For more information on defining custom blockchains, please read our [sidechain](/documentation?i=lisk-apps-docs/Sidechain) tutorial.
+For more information on defining custom blockchains, please read our [sidechain](/documentation?i=lisk-dapps-docs/Sidechain) tutorial.
 
 ## Modules
 
