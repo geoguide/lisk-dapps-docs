@@ -1,4 +1,4 @@
-# Debugging Dapps
+# Debugging Apps
 
 Requirements:
 
