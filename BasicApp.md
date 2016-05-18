@@ -110,4 +110,4 @@ node app.js
 
 Once Lisks has loaded, your app should have launched. To verify this, simply open your browser with the following link: [http://localhost:7000/dapps/[appid]/](http://localhost:7000/dapps/[appid]/), replacing **[appid]** with your app's own unique identifier.
 
-All done! In the [next tutorial](/documentation?i=lisk-apps-docs/MessagingApp), we describe how to make a new Messaging App using Lisks's App SDK.
+All done! In the [next tutorial](/documentation?i=lisk-dapps-docs/MessagingApp), we describe how to make a new Messaging App using Lisks's App SDK.
