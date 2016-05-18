@@ -35,14 +35,14 @@ If you are just starting out, then before progressing any further. We strongly s
 
 For more information on how to proceed with developing your first Lisk based app. Please read the following tutorials:
 
-* [Setting up an Environment](/documentation?i=lisk-apps-docs/EnvironmentSetup)
-* [Creating a Basic App](/documentation?i=lisk-apps-docs/BasicApp)
-* [Creating a Messaging App](/documentation?i=lisk-apps-docs/MessagingApp)
-* [Adding a User Interface](/documentation?i=lisk-apps-docs/UserInterface)
-* [Introducing the App SDK](/documentation?i=lisk-apps-docs/AppSDK)
-* [Creating a Custom Sidechain](/documentation?i=lisk-apps-docs/Sidechain)
-* [Creating a Reddit App](/documentation?i=lisk-apps-docs/RedditApp)
-* [Debugging Apps](/documentation?i=lisk-apps-docs/DebuggingApps)
+* [Setting up an Environment](/documentation?i=lisk-dapps-docs/EnvironmentSetup)
+* [Creating a Basic App](/documentation?i=lisk-dapps-docs/BasicApp)
+* [Creating a Messaging App](/documentation?i=lisk-dapps-docs/MessagingApp)
+* [Adding a User Interface](/documentation?i=lisk-dapps-docs/UserInterface)
+* [Introducing the App SDK](/documentation?i=lisk-dapps-docs/AppSDK)
+* [Creating a Custom Sidechain](/documentation?i=lisk-dapps-docs/Sidechain)
+* [Creating a Reddit App](/documentation?i=lisk-dapps-docs/RedditApp)
+* [Debugging Apps](/documentation?i=lisk-dapps-docs/DebuggingApps)
 
 ## Sandboxing
 
