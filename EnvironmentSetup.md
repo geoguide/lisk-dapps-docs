@@ -1,6 +1,6 @@
 # Setting up an Environment
 
-Before we can start building our first Lisk decentralized application (dapp), we first need to setup a development environment to include a localized testnet and the **Lisk CLI** tool.
+Before we can start building our first Lisk blockchain application (app), we first need to setup a development environment to include a localized testnet and the **Lisk CLI** tool.
 
 ## Lisk Testnet
 
@@ -20,7 +20,7 @@ In order to install a suitable testnet environment that is isolated from the mai
 
 ## Lisk CLI
 
-With Lisk installed and up and running, we can now proceed to install **Lisk CLI** and start work on our first dapp.
+With Lisk installed and up and running, we can now proceed to install **Lisk CLI** and start work on our first app.
 
 Install **Lisk CLI**:
 
@@ -41,7 +41,7 @@ Usage: lisk-cli [options] [command]
 
 Commands:
 
-    dapps [options]      manage your dapps
+    dapps [options]      manage your apps
     contract [options]   contract operations
     crypto [options]     crypto operations
 
@@ -51,4 +51,4 @@ Options:
     -V, --version  output the version number
 ```
 
-Congratulations! We are now ready to create our first dapp! Let's continue with the [next tutorial](/documentation?i=lisk-dapps-docs/BasicDapp).
+Congratulations! We are now ready to create our first app! Let's continue with the [next tutorial](/documentation?i=lisk-apps-docs/BasicApp).
