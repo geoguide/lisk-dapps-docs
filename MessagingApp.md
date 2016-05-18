@@ -552,4 +552,4 @@ Replacing **[appid]** with your app's own unique identifier and **[recipientId]*
 
 This completes the backend of our Messaging app. The source code for this tutorial is available [here](https://github.com/LiskHQ/lisk-messaging-app).
 
-In the [next tutorial](/documentation?i=lisk-apps-docs/UserInterface), we describe how to create a frontend user interface for our Messaging app.
+In the [next tutorial](/documentation?i=lisk-dapps-docs/UserInterface), we describe how to create a frontend user interface for our Messaging app.
