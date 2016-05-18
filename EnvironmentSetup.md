@@ -51,4 +51,4 @@ Options:
     -V, --version  output the version number
 ```
 
-Congratulations! We are now ready to create our first app! Let's continue with the [next tutorial](/documentation?i=lisk-apps-docs/BasicApp).
+Congratulations! We are now ready to create our first app! Let's continue with the [next tutorial](/documentation?i=lisk-dapps-docs/BasicApp).
