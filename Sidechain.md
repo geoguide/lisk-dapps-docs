@@ -1,6 +1,6 @@
 # Creating a Custom Sidechain
 
-Each Lisk dapp's sidechain data is stored within a self-contained, in-process [SQLite](https://sqlite.org/) database engine. Wherein your custom sidechain data is structured into tables and fields inside a relational database.
+Each Lisk blockchain app's sidechain data is stored within a self-contained, in-process [SQLite](https://sqlite.org/) database engine. Wherein your custom sidechain data is structured into tables and fields inside a relational database.
 
 To make it as simple as possible to manage your sidechain data. Lisk uses a JSON based API, which allows you to both define and manage your database, without needing to understand how to write complicated SQL queries.
 
@@ -8,7 +8,7 @@ To make it as simple as possible to manage your sidechain data. Lisk uses a JSON
 
 Before we can store any data on our sidechain, we need to initialize some tables. To initialize a table, we first need to describe the tables in our database schema.
 
-Open the **blockchain.json** file in the root folder of your dapp, where you will find an array of objects.
+Open the **blockchain.json** file in the root folder of your app, where you will find an array of objects.
 
 The below example represents the schema of a **blocks** table:
 
@@ -91,11 +91,11 @@ Each object represents a field in the table's schema, and can be described using
   * type - The field type. Can be "String", "BigInt" or "Binary".
   * length - The field length. Required for "String" or "Binary" field types.
 
-Please note, we don't recommend using "Binary" fields, as it will increase the amount of traffic passed back and forth between Lisk and your dapp. Instead, we recommend converting Binary data to hexadecimal format and saving it as "String". So, if you have a 32 byte binary buffer, convert it to a hexadecimal, and then save to a "String" field with 64 chars length.
+Please note, we don't recommend using "Binary" fields, as it will increase the amount of traffic passed back and forth between Lisk and your app. Instead, we recommend converting Binary data to hexadecimal format and saving it as "String". So, if you have a 32 byte binary buffer, convert it to a hexadecimal, and then save to a "String" field with 64 chars length.
 
 ## Queries
 
-Lisk provides a fully fledged SQL API, which allows you interact with the information stored in your dapp's database.
+Lisk provides a fully fledged SQL API, which allows you interact with the information stored in your app's database.
 
 For further information, please read our [SQL API Documentation](http://dapps-api.lisk.io/Sql.html).
 
